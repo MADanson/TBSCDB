@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace DBSystemController
 {
@@ -18,20 +19,38 @@ namespace DBSystemController
         public Form1()
         {
             InitializeComponent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            ActivityBar.Value = 100;
+            ModifyProgressBarColor.SetState(ActivityBar, 2);
         }
-
-        private void ServerStart_Click(object sender, EventArgs e)
+        
+        private void buttonStart_Click(object sender, EventArgs e)
         {
-            if (SystemRunning == true)
+            if (SystemRunning == false)
             {
+                buttonStart.Text = "Start Server";
                 SystemRunning = true;
-                ServerStart.Text = "Server Running";
-            }
-            else if (SystemRunning == false)
+                ModifyProgressBarColor.SetState(ActivityBar, 2);
+
+            } else if (SystemRunning == true)
             {
-                //ServerStart.Text = "Start Server";
+                buttonStart.Text = "Stop Server";
+                SystemRunning = false;
+                ModifyProgressBarColor.SetState(ActivityBar, 1);
+
             }
+        }
+    }
+
+    //progress bar, that's right we need all this to change the colour
+    //call this with values: 1 = green, 2 = red, 3 = yellow
+    public static class ModifyProgressBarColor
+    {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+        public static void SetState(this ProgressBar pBar, int state)
+        {
+            SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
         }
     }
 
