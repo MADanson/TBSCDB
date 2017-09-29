@@ -15,13 +15,15 @@ namespace DBSystemController
     {
         
         bool SystemRunning = false; //this will have protection later I promise!
-
+        
         public Form1()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.Fixed3D;
             ActivityBar.Value = 100;
             ModifyProgressBarColor.SetState(ActivityBar, 2);
+            //buttonStart.Click += new System.EventHandler(buttonStart_Click);
+            buttonStart.Click += buttonStart_Click;
         }
         
         private void buttonStart_Click(object sender, EventArgs e)
@@ -31,13 +33,11 @@ namespace DBSystemController
                 buttonStart.Text = "Start Server";
                 SystemRunning = true;
                 ModifyProgressBarColor.SetState(ActivityBar, 2);
-
             } else if (SystemRunning == true)
             {
                 buttonStart.Text = "Stop Server";
                 SystemRunning = false;
                 ModifyProgressBarColor.SetState(ActivityBar, 1);
-
             }
         }
     }

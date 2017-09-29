@@ -1,18 +1,12 @@
+C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe.config
+C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe
+C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.pdb
+C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\Dapper.dll
+C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\Dapper.xml
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.csprojResolveAssemblyReference.cache
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.Form1.resources
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.Properties.Resources.resources
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.csproj.GenerateResource.Cache
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.csproj.CoreCompileInputs.cache
-C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe.config
-C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe
-C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.pdb
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.exe
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.pdb
-<<<<<<< HEAD
-C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\Dapper.dll
-C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\Dapper.xml
-=======
-C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe.config
-C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.exe
-C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.pdb
->>>>>>> bb0cb53c3823b1b74b8ab8fe7329f12addce0618
