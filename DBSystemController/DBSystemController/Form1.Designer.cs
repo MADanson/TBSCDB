@@ -50,7 +50,7 @@
             // 
             // ActivityBar
             // 
-            this.ActivityBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ActivityBar.ForeColor = System.Drawing.Color.Red;
             this.ActivityBar.Location = new System.Drawing.Point(12, 12);
             this.ActivityBar.MarqueeAnimationSpeed = 10;
             this.ActivityBar.Name = "ActivityBar";
