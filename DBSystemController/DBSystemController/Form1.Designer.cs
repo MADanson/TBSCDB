@@ -28,34 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            System.Windows.Forms.Button ServerStart;
+            ServerStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // ServerStart
             // 
-            this.button1.Location = new System.Drawing.Point(157, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            ServerStart.Location = new System.Drawing.Point(12, 12);
+            ServerStart.Name = "ServerStart";
+            ServerStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            ServerStart.Size = new System.Drawing.Size(85, 40);
+            ServerStart.TabIndex = 0;
+            ServerStart.Text = "Start Server";
+            ServerStart.UseVisualStyleBackColor = true;
+            ServerStart.Click += new System.EventHandler(this.ServerStart_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(826, 495);
+            this.ControlBox = false;
+            this.Controls.Add(ServerStart);
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Form1";
+            this.Text = "DBServer Controller";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
     }
 }
 
