@@ -8,3 +8,6 @@ C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.pdb
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.exe
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.pdb
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe.config
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.exe
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.pdb
