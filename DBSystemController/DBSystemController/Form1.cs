@@ -23,7 +23,8 @@ namespace DBSystemController
             ActivityBar.Value = 100;
             ModifyProgressBarColor.SetState(ActivityBar, 2);
             //buttonStart.Click += new System.EventHandler(buttonStart_Click);
-            buttonStart.Click += buttonStart_Click;
+            //buttonStart.Click += buttonStart_Click;
+            buttonStart.Click += new EventHandler(buttonStart_Click);
         }
         
         private void buttonStart_Click(object sender, EventArgs e)
