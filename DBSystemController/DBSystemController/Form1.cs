@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
@@ -13,18 +14,32 @@ namespace DBSystemController
 {
     public partial class Form1 : Form
     {
-        
-        
-        
+
+        PerformanceCounter PercentBytesUsed = new System.Diagnostics.PerformanceCounter();
+        PerformanceCounter TotalCPUUsage = new System.Diagnostics.PerformanceCounter();
+        Timer Updater = new Timer();
+
         public Form1()
         {
             InitializeComponent();
-            FormBorderStyle = FormBorderStyle.Fixed3D;
-            ModifyProgressBarColor.SetState(ActivityBar, 2);
-            //updating system name for counters
+            //Creates Performance Counters
+            PercentBytesUsed = new PerformanceCounter("Memory", "Available MBytes", String.Empty, System.Environment.MachineName);
+            TotalCPUUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total", System.Environment.MachineName);
+
+            //adding 1 Second Updater
+            Updater.Interval = 1000;
             TotalCPUUsage.MachineName = System.Environment.MachineName;
             PercentBytesUsed.MachineName = System.Environment.MachineName;
+            Updater.Tick += new EventHandler(Updater_Tick);
+            Updater.Enabled = true;
+            Updater.Start();
+
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            ModifyProgressBarColor.SetState(ActivityBar, 2);
         }
+
+
+
         bool SystemRunning = false; //this will have protection later I promise!
 
         private void StartStop_Click(object sender, EventArgs e)
@@ -45,8 +60,9 @@ namespace DBSystemController
 
         private void Updater_Tick(object sender, EventArgs e)
         {
-            CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0) + "%";
-            RamLabel.Text = "RAM Usage: " + Math.Round(PercentBytesUsed.NextValue(), 0) + "%";
+            double RamRound = (PercentBytesUsed.NextValue()) / 100;
+            RamLabel.Text = "RAM Usage: " + Math.Round(RamRound, 0,MidpointRounding.AwayFromZero) + "%";
+            CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0, MidpointRounding.AwayFromZero) + "%";
         }
     }
 
