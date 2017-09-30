@@ -14,7 +14,7 @@ namespace DBSystemController
 {
     public partial class Form1 : Form
     {
-
+        //Defining counters
         PerformanceCounter PercentBytesUsed = new System.Diagnostics.PerformanceCounter();
         PerformanceCounter TotalCPUUsage = new System.Diagnostics.PerformanceCounter();
         Timer Updater = new Timer();
@@ -38,8 +38,6 @@ namespace DBSystemController
             ModifyProgressBarColor.SetState(ActivityBar, 2);
         }
 
-
-
         bool SystemRunning = false; //this will have protection later I promise!
 
         private void StartStop_Click(object sender, EventArgs e)
@@ -49,6 +47,7 @@ namespace DBSystemController
                 buttonStart.Text = "Server Running";
                 SystemRunning = true;
                 ModifyProgressBarColor.SetState(ActivityBar, 1);
+                StartupProcess.OpenConnections();
             }
             else if (SystemRunning == true)
             {
@@ -64,6 +63,7 @@ namespace DBSystemController
             RamLabel.Text = "RAM Usage: " + Math.Round(RamRound, 0,MidpointRounding.AwayFromZero) + "%";
             CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0, MidpointRounding.AwayFromZero) + "%";
         }
+
     }
 
     //progress bar, that's right we need all this to change the colour
@@ -76,6 +76,17 @@ namespace DBSystemController
         {
             SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
         }
+    }
+
+    //this process is called when the server is started
+    public static class StartupProcess
+    {
+        //this is the method that will open connections with the DB and the ports so that devices can connect
+        public static void OpenConnections()
+        {
+
+        }
+
     }
 
 }
