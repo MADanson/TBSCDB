@@ -28,17 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.buttonStart = new System.Windows.Forms.Button();
             this.ActivityBar = new System.Windows.Forms.ProgressBar();
             this.StartStop = new System.Windows.Forms.Button();
-            this.PercentBytesUsed = new System.Diagnostics.PerformanceCounter();
-            this.TotalCPUUsage = new System.Diagnostics.PerformanceCounter();
             this.RamLabel = new System.Windows.Forms.Label();
             this.CPUUsage = new System.Windows.Forms.Label();
-            this.Updater = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.PercentBytesUsed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalCPUUsage)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -86,19 +80,6 @@
             this.StartStop.UseVisualStyleBackColor = false;
             this.StartStop.Click += new System.EventHandler(this.StartStop_Click);
             // 
-            // PercentBytesUsed
-            // 
-            this.PercentBytesUsed.CategoryName = "Memory";
-            this.PercentBytesUsed.CounterName = "% Committed Bytes In Use";
-            this.PercentBytesUsed.MachineName = "-";
-            // 
-            // TotalCPUUsage
-            // 
-            this.TotalCPUUsage.CategoryName = "Processor Information";
-            this.TotalCPUUsage.CounterName = "% Privileged Time";
-            this.TotalCPUUsage.InstanceName = "_Total";
-            this.TotalCPUUsage.MachineName = "-";
-            // 
             // RamLabel
             // 
             this.RamLabel.AutoSize = true;
@@ -119,12 +100,6 @@
             this.CPUUsage.TabIndex = 0;
             this.CPUUsage.Text = "CPU Usage:";
             // 
-            // Updater
-            // 
-            this.Updater.Enabled = true;
-            this.Updater.Interval = 1000;
-            this.Updater.Tick += new System.EventHandler(this.Updater_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,8 +114,6 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "DBServer Controller";
-            ((System.ComponentModel.ISupportInitialize)(this.PercentBytesUsed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TotalCPUUsage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,11 +124,8 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.ProgressBar ActivityBar;
         private System.Windows.Forms.Button StartStop;
-        private System.Diagnostics.PerformanceCounter PercentBytesUsed;
-        private System.Diagnostics.PerformanceCounter TotalCPUUsage;
         private System.Windows.Forms.Label CPUUsage;
         private System.Windows.Forms.Label RamLabel;
-        private System.Windows.Forms.Timer Updater;
     }
 }
 
