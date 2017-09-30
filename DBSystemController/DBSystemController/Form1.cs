@@ -39,6 +39,12 @@ namespace DBSystemController
                 ModifyProgressBarColor.SetState(ActivityBar, 2);
             }
         }
+
+        private void Updater_Tick(object sender, EventArgs e)
+        {
+            CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0) + "%";
+            RamLabel.Text = "RAM Usage: " + Math.Round(PercentBytesUsed.NextValue(), 0) + "%";
+        }
     }
 
     //progress bar, that's right we need all this to change the colour
