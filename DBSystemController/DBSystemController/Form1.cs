@@ -48,12 +48,14 @@ namespace DBSystemController
                 SystemRunning = true;
                 ModifyProgressBarColor.SetState(ActivityBar, 1);
                 StartupProcess.OpenConnections();
+                SettingsPanel.Visible = false;
             }
             else if (SystemRunning == true)
             {
                 buttonStart.Text = "Server Stopped";
                 SystemRunning = false;
                 ModifyProgressBarColor.SetState(ActivityBar, 2);
+                SettingsPanel.Visible = true;
             }
         }
 
