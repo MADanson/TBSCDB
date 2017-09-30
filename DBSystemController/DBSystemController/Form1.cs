@@ -21,6 +21,9 @@ namespace DBSystemController
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.Fixed3D;
             ModifyProgressBarColor.SetState(ActivityBar, 2);
+            //updating system name for counters
+            TotalCPUUsage.MachineName = System.Environment.MachineName;
+            PercentBytesUsed.MachineName = System.Environment.MachineName;
         }
         bool SystemRunning = false; //this will have protection later I promise!
 
