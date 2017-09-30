@@ -15,7 +15,6 @@ namespace DBSystemController
     public partial class Form1 : Form
     {
 
-
         PerformanceCounter PercentBytesUsed = new System.Diagnostics.PerformanceCounter();
         PerformanceCounter TotalCPUUsage = new System.Diagnostics.PerformanceCounter();
         Timer Updater = new Timer();
@@ -24,10 +23,8 @@ namespace DBSystemController
         {
             InitializeComponent();
             //Creates Performance Counters
-            PercentBytesUsed.CategoryName = "Memory";
-            PercentBytesUsed.CounterName = "%Committed Bytes In Use";
-            TotalCPUUsage.CategoryName = "ProcessorInformation";
-            TotalCPUUsage.CounterName = "%Privileged Time";
+            PercentBytesUsed = new PerformanceCounter("Memory", "Available MBytes", String.Empty, System.Environment.MachineName);
+            TotalCPUUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total", System.Environment.MachineName);
 
             //adding 1 Second Updater
             Updater.Interval = 1000;
@@ -63,8 +60,9 @@ namespace DBSystemController
 
         private void Updater_Tick(object sender, EventArgs e)
         {
-            RamLabel.Text = "RAM Usage: " + Math.Round(PercentBytesUsed.NextValue(), 0) + "%";
-            CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0) + "%";
+            double RamRound = (PercentBytesUsed.NextValue()) / 100;
+            RamLabel.Text = "RAM Usage: " + Math.Round(RamRound, 0,MidpointRounding.AwayFromZero) + "%";
+            CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0, MidpointRounding.AwayFromZero) + "%";
         }
     }
 
