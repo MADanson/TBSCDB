@@ -90,14 +90,14 @@
             // 
             this.PercentBytesUsed.CategoryName = "Memory";
             this.PercentBytesUsed.CounterName = "% Committed Bytes In Use";
-            this.PercentBytesUsed.MachineName = "DESKTOP-JE9428C";
+            this.PercentBytesUsed.MachineName = "-";
             // 
             // TotalCPUUsage
             // 
             this.TotalCPUUsage.CategoryName = "Processor Information";
             this.TotalCPUUsage.CounterName = "% Privileged Time";
             this.TotalCPUUsage.InstanceName = "_Total";
-            this.TotalCPUUsage.MachineName = "DESKTOP-JE9428C";
+            this.TotalCPUUsage.MachineName = "-";
             // 
             // RamLabel
             // 
