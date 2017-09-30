@@ -14,31 +14,29 @@ namespace DBSystemController
     public partial class Form1 : Form
     {
         
-        bool SystemRunning = false; //this will have protection later I promise!
+        
         
         public Form1()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.Fixed3D;
-            ActivityBar.Value = 100;
             ModifyProgressBarColor.SetState(ActivityBar, 2);
-            //buttonStart.Click += new System.EventHandler(buttonStart_Click);
-            //buttonStart.Click += buttonStart_Click;
-            buttonStart.Click += new EventHandler(buttonStart_Click);
         }
-        
-        private void buttonStart_Click(object sender, EventArgs e)
+        bool SystemRunning = false; //this will have protection later I promise!
+
+        private void StartStop_Click(object sender, EventArgs e)
         {
             if (SystemRunning == false)
             {
-                buttonStart.Text = "Start Server";
+                buttonStart.Text = "Server Running";
                 SystemRunning = true;
-                ModifyProgressBarColor.SetState(ActivityBar, 2);
-            } else if (SystemRunning == true)
-            {
-                buttonStart.Text = "Stop Server";
-                SystemRunning = false;
                 ModifyProgressBarColor.SetState(ActivityBar, 1);
+            }
+            else if (SystemRunning == true)
+            {
+                buttonStart.Text = "Server Stopped";
+                SystemRunning = false;
+                ModifyProgressBarColor.SetState(ActivityBar, 2);
             }
         }
     }
