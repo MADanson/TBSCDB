@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonStart = new System.Windows.Forms.Button();
             this.ActivityBar = new System.Windows.Forms.ProgressBar();
             this.StartStop = new System.Windows.Forms.Button();
@@ -47,6 +48,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SettingsLabel = new System.Windows.Forms.Label();
             this.SetBackupTimer = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.BackupTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BackUpTime)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -123,10 +126,12 @@
             // BackUpTime
             // 
             this.BackUpTime.Location = new System.Drawing.Point(3, 23);
-            this.BackUpTime.Maximum = 20;
+            this.BackUpTime.Maximum = 60;
             this.BackUpTime.Name = "BackUpTime";
             this.BackUpTime.Size = new System.Drawing.Size(249, 45);
+            this.BackUpTime.SmallChange = 5;
             this.BackUpTime.TabIndex = 3;
+            this.BackUpTime.TickFrequency = 5;
             this.BackUpTime.Scroll += new System.EventHandler(this.BackUpTime_Changed);
             // 
             // tabControl1
@@ -199,6 +204,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.BackupLocationBar);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.BackUpTime);
             this.panel1.Location = new System.Drawing.Point(5, 6);
@@ -268,6 +274,15 @@
             this.SetBackupTimer.UseVisualStyleBackColor = false;
             this.SetBackupTimer.Click += new System.EventHandler(this.SetBackupTimer_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(162, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Every";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +333,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox DebugConsole;
         private System.Windows.Forms.Button SetBackupTimer;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer BackupTimer;
     }
 }
 

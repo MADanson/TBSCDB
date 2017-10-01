@@ -40,6 +40,7 @@ namespace DBSystemController
 
         string DebugConsoleText;
         bool SystemRunning = false; //this will have protection later I promise!
+        int BackupTimeVal = 100000; //will be loaded from a file
 
         private void StartStop_Click(object sender, EventArgs e)
         {
@@ -102,13 +103,24 @@ namespace DBSystemController
         {
             //will become enabled whenever an element is changed
             SetBackupTimer.Enabled = false;
+            BackupTimeVal = BackUpTime.Value;
             //Then sets the new backup elements
             //such as changing the timer
         }
 
         private void BackUpTime_Changed(object sender, EventArgs e)
         {
+            int SetVal;
             SetBackupTimer.Enabled = true;
+            if(BackUpTime.Value == 0)
+            {
+                SetVal = BackUpTime.Value + 1; //stops the time from being 0
+                label3.Text = (SetVal + " Minute");
+            } else
+            {
+                SetVal = BackUpTime.Value;
+                label3.Text = (SetVal + " Minutes");
+            }
         }
     }
 
