@@ -44,8 +44,11 @@
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.SettingsLabel = new System.Windows.Forms.Label();
+            this.DebugConsole = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SettingsPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -138,6 +141,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.DebugConsole);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -225,6 +230,25 @@
             this.SettingsLabel.TabIndex = 7;
             this.SettingsLabel.Text = "You cannot modify settings whilst the server is running";
             // 
+            // DebugConsole
+            // 
+            this.DebugConsole.Enabled = false;
+            this.DebugConsole.Location = new System.Drawing.Point(3, 315);
+            this.DebugConsole.Multiline = true;
+            this.DebugConsole.Name = "DebugConsole";
+            this.DebugConsole.ReadOnly = true;
+            this.DebugConsole.Size = new System.Drawing.Size(807, 96);
+            this.DebugConsole.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 299);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Temp Debug Console";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,6 +266,8 @@
             this.Text = "DBServer Controller";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.SettingsPanel.ResumeLayout(false);
@@ -270,6 +296,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel SettingsPanel;
         private System.Windows.Forms.Label SettingsLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox DebugConsole;
     }
 }
 

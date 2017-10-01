@@ -42,14 +42,18 @@ namespace DBSystemController
 
         private void StartStop_Click(object sender, EventArgs e)
         {
+            //<<<<<<<<<< THIS STARTS THE SERVER
             if (SystemRunning == false)
             {
                 buttonStart.Text = "Server Running";
                 SystemRunning = true;
                 ModifyProgressBarColor.SetState(ActivityBar, 1);
-                StartupProcess.OpenConnections();
+                //creates a new instance of the class StartupProcess
+                OpenConnections();
                 SettingsPanel.Visible = false;
+
             }
+            //<<<<<<<<<< THIS STOPS THE SERVER
             else if (SystemRunning == true)
             {
                 buttonStart.Text = "Server Stopped";
@@ -59,11 +63,28 @@ namespace DBSystemController
             }
         }
 
+        //Runs every second that the updater ticks
         private void Updater_Tick(object sender, EventArgs e)
         {
             double RamRound = (PercentBytesUsed.NextValue()) / 100;
             RamLabel.Text = "RAM Usage: " + Math.Round(RamRound, 0,MidpointRounding.AwayFromZero) + "%";
             CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0, MidpointRounding.AwayFromZero) + "%";
+        }
+
+        //Method for setting DebugConsole Text from outside classes
+        public void SetConsoleText(ref string text)
+        {
+            //TIL Using AppendText is more data efficient as it only renders visable text
+            DebugConsole.AppendText(text);
+            DebugConsole.AppendText(Environment.NewLine);
+        }
+
+        //this process is called when the server is started
+        //<<<<<<<<<< THIS SHOULD OPEN ALL OF THE CONNECTIONS
+        public void OpenConnections()
+        {
+            string DebugConsoleText = "Establishing Connections";
+            SetConsoleText(ref DebugConsoleText);
         }
 
     }
@@ -78,17 +99,6 @@ namespace DBSystemController
         {
             SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
         }
-    }
-
-    //this process is called when the server is started
-    public static class StartupProcess
-    {
-        //this is the method that will open connections with the DB and the ports so that devices can connect
-        public static void OpenConnections()
-        {
-
-        }
-
     }
 
 }
