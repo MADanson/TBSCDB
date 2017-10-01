@@ -12,14 +12,15 @@ using System.Runtime.InteropServices;
 
 namespace DBSystemController
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : Form
     {
         //Defining counters
         PerformanceCounter PercentBytesUsed = new System.Diagnostics.PerformanceCounter();
         PerformanceCounter TotalCPUUsage = new System.Diagnostics.PerformanceCounter();
         Timer Updater = new Timer();
+        string item = new List<Item>();
 
-        public Form1()
+        public Dashboard()
         {
             InitializeComponent();
             //Creates Performance Counters
@@ -36,6 +37,7 @@ namespace DBSystemController
 
             FormBorderStyle = FormBorderStyle.Fixed3D;
             ModifyProgressBarColor.SetState(ActivityBar, 2);
+
         }
 
         string DebugConsoleText;
@@ -109,6 +111,25 @@ namespace DBSystemController
         private void BackUpTime_Changed(object sender, EventArgs e)
         {
             SetBackupTimer.Enabled = true;
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DebugConsole_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_sqlInput_Click(object sender, EventArgs e)
+        {
+            dataAccess db = new dataAccess();
+            item = db.GetItems(txb_sqlInput.Text);
+            DebugConsoleText = item;
+            SetConsoleText(ref DebugConsoleText);
+
         }
     }
 

@@ -10,3 +10,14 @@ C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.csproj.CoreCompileInputs.cache
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.exe
 C:\Users\Alexa\Documents\GitHub\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.pdb
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe.config
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.exe
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.pdb
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.exe
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\bin\Debug\DBSystemController.pdb
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\bin\Debug\Dapper.dll
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\bin\Debug\Dapper.xml
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.csprojResolveAssemblyReference.cache
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.Properties.Resources.resources
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.csproj.GenerateResource.Cache
+C:\Users\removevirus\Documents\TBSCDB\TBSCDB\DBSystemController\DBSystemController\obj\Debug\DBSystemController.Dashboard.resources

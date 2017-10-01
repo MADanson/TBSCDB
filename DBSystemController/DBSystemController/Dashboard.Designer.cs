@@ -1,6 +1,6 @@
 ﻿namespace DBSystemController
 {
-    partial class Form1
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.buttonStart = new System.Windows.Forms.Button();
             this.ActivityBar = new System.Windows.Forms.ProgressBar();
             this.StartStop = new System.Windows.Forms.Button();
@@ -36,17 +37,20 @@
             this.BackUpTime = new System.Windows.Forms.TrackBar();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label_sqlInput = new System.Windows.Forms.Label();
+            this.txb_sqlInput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.DebugConsole = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.SettingsPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SetBackupTimer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BackupLocationBar = new System.Windows.Forms.DomainUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.SettingsLabel = new System.Windows.Forms.Label();
-            this.SetBackupTimer = new System.Windows.Forms.Button();
+            this.btn_sqlInput = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackUpTime)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -78,7 +82,7 @@
             this.ActivityBar.Location = new System.Drawing.Point(12, 12);
             this.ActivityBar.MarqueeAnimationSpeed = 10;
             this.ActivityBar.Name = "ActivityBar";
-            this.ActivityBar.Size = new System.Drawing.Size(673, 31);
+            this.ActivityBar.Size = new System.Drawing.Size(805, 31);
             this.ActivityBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ActivityBar.TabIndex = 2;
             this.ActivityBar.Value = 100;
@@ -86,16 +90,16 @@
             // StartStop
             // 
             this.StartStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
-            this.StartStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.StartStop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StartStop.BackgroundImage")));
+            this.StartStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.StartStop.FlatAppearance.BorderSize = 0;
             this.StartStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartStop.ForeColor = System.Drawing.Color.White;
-            this.StartStop.Location = new System.Drawing.Point(685, 12);
+            this.StartStop.Location = new System.Drawing.Point(787, 12);
             this.StartStop.Name = "StartStop";
-            this.StartStop.Size = new System.Drawing.Size(134, 31);
+            this.StartStop.Size = new System.Drawing.Size(32, 31);
             this.StartStop.TabIndex = 1;
-            this.StartStop.Text = "Start Server";
             this.StartStop.UseMnemonic = false;
             this.StartStop.UseVisualStyleBackColor = false;
             this.StartStop.Click += new System.EventHandler(this.StartStop_Click);
@@ -143,6 +147,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.tabPage1.Controls.Add(this.btn_sqlInput);
+            this.tabPage1.Controls.Add(this.label_sqlInput);
+            this.tabPage1.Controls.Add(this.txb_sqlInput);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.DebugConsole);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -151,6 +158,23 @@
             this.tabPage1.Size = new System.Drawing.Size(813, 417);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label_sqlInput
+            // 
+            this.label_sqlInput.AutoSize = true;
+            this.label_sqlInput.Location = new System.Drawing.Point(6, 15);
+            this.label_sqlInput.Name = "label_sqlInput";
+            this.label_sqlInput.Size = new System.Drawing.Size(55, 13);
+            this.label_sqlInput.TabIndex = 3;
+            this.label_sqlInput.Text = "SQL Input";
+            // 
+            // txb_sqlInput
+            // 
+            this.txb_sqlInput.Location = new System.Drawing.Point(67, 12);
+            this.txb_sqlInput.Name = "txb_sqlInput";
+            this.txb_sqlInput.Size = new System.Drawing.Size(669, 20);
+            this.txb_sqlInput.TabIndex = 2;
             // 
             // label4
             // 
@@ -170,6 +194,7 @@
             this.DebugConsole.ReadOnly = true;
             this.DebugConsole.Size = new System.Drawing.Size(807, 96);
             this.DebugConsole.TabIndex = 0;
+            this.DebugConsole.TextChanged += new System.EventHandler(this.DebugConsole_TextChanged);
             // 
             // tabPage2
             // 
@@ -205,6 +230,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 117);
             this.panel1.TabIndex = 4;
+            // 
+            // SetBackupTimer
+            // 
+            this.SetBackupTimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.SetBackupTimer.Enabled = false;
+            this.SetBackupTimer.FlatAppearance.BorderSize = 0;
+            this.SetBackupTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SetBackupTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetBackupTimer.ForeColor = System.Drawing.Color.White;
+            this.SetBackupTimer.Location = new System.Drawing.Point(177, 87);
+            this.SetBackupTimer.Name = "SetBackupTimer";
+            this.SetBackupTimer.Size = new System.Drawing.Size(75, 23);
+            this.SetBackupTimer.TabIndex = 8;
+            this.SetBackupTimer.Text = "Save";
+            this.SetBackupTimer.UseVisualStyleBackColor = false;
+            this.SetBackupTimer.Click += new System.EventHandler(this.SetBackupTimer_Click);
             // 
             // label3
             // 
@@ -252,23 +293,17 @@
             this.SettingsLabel.TabIndex = 7;
             this.SettingsLabel.Text = "You cannot modify settings whilst the server is running";
             // 
-            // SetBackupTimer
+            // btn_sqlInput
             // 
-            this.SetBackupTimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
-            this.SetBackupTimer.Enabled = false;
-            this.SetBackupTimer.FlatAppearance.BorderSize = 0;
-            this.SetBackupTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SetBackupTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SetBackupTimer.ForeColor = System.Drawing.Color.White;
-            this.SetBackupTimer.Location = new System.Drawing.Point(177, 87);
-            this.SetBackupTimer.Name = "SetBackupTimer";
-            this.SetBackupTimer.Size = new System.Drawing.Size(75, 23);
-            this.SetBackupTimer.TabIndex = 8;
-            this.SetBackupTimer.Text = "Save";
-            this.SetBackupTimer.UseVisualStyleBackColor = false;
-            this.SetBackupTimer.Click += new System.EventHandler(this.SetBackupTimer_Click);
+            this.btn_sqlInput.Location = new System.Drawing.Point(742, 10);
+            this.btn_sqlInput.Name = "btn_sqlInput";
+            this.btn_sqlInput.Size = new System.Drawing.Size(57, 23);
+            this.btn_sqlInput.TabIndex = 4;
+            this.btn_sqlInput.Text = "Submit";
+            this.btn_sqlInput.UseVisualStyleBackColor = true;
+            this.btn_sqlInput.Click += new System.EventHandler(this.btn_sqlInput_Click);
             // 
-            // Form1
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,11 +311,11 @@
             this.ClientSize = new System.Drawing.Size(826, 495);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.RamLabel);
-            this.Controls.Add(this.CPUUsage);
             this.Controls.Add(this.StartStop);
+            this.Controls.Add(this.CPUUsage);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.ActivityBar);
-            this.Name = "Form1";
+            this.Name = "Dashboard";
             this.ShowIcon = false;
             this.Text = "DBServer Controller";
             ((System.ComponentModel.ISupportInitialize)(this.BackUpTime)).EndInit();
@@ -318,6 +353,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox DebugConsole;
         private System.Windows.Forms.Button SetBackupTimer;
+        private System.Windows.Forms.Label label_sqlInput;
+        private System.Windows.Forms.TextBox txb_sqlInput;
+        private System.Windows.Forms.Button btn_sqlInput;
     }
 }
 
