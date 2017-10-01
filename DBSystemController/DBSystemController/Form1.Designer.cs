@@ -33,20 +33,21 @@
             this.StartStop = new System.Windows.Forms.Button();
             this.RamLabel = new System.Windows.Forms.Label();
             this.CPUUsage = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.BackUpTime = new System.Windows.Forms.TrackBar();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DebugConsole = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.SettingsPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.BackupLocationBar = new System.Windows.Forms.DomainUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.SettingsLabel = new System.Windows.Forms.Label();
-            this.DebugConsole = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.SetBackupTimer = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.BackUpTime)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -119,13 +120,14 @@
             this.CPUUsage.TabIndex = 0;
             this.CPUUsage.Text = "CPU Usage:";
             // 
-            // trackBar1
+            // BackUpTime
             // 
-            this.trackBar1.Location = new System.Drawing.Point(3, 23);
-            this.trackBar1.Maximum = 20;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(249, 45);
-            this.trackBar1.TabIndex = 3;
+            this.BackUpTime.Location = new System.Drawing.Point(3, 23);
+            this.BackUpTime.Maximum = 20;
+            this.BackUpTime.Name = "BackUpTime";
+            this.BackUpTime.Size = new System.Drawing.Size(249, 45);
+            this.BackUpTime.TabIndex = 3;
+            this.BackUpTime.Scroll += new System.EventHandler(this.BackUpTime_Changed);
             // 
             // tabControl1
             // 
@@ -149,6 +151,25 @@
             this.tabPage1.Size = new System.Drawing.Size(813, 417);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 299);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Temp Debug Console";
+            // 
+            // DebugConsole
+            // 
+            this.DebugConsole.Enabled = false;
+            this.DebugConsole.Location = new System.Drawing.Point(3, 315);
+            this.DebugConsole.Multiline = true;
+            this.DebugConsole.Name = "DebugConsole";
+            this.DebugConsole.ReadOnly = true;
+            this.DebugConsole.Size = new System.Drawing.Size(807, 96);
+            this.DebugConsole.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -174,14 +195,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.SetBackupTimer);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.domainUpDown1);
+            this.panel1.Controls.Add(this.BackupLocationBar);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.trackBar1);
+            this.panel1.Controls.Add(this.BackUpTime);
             this.panel1.Location = new System.Drawing.Point(5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 91);
+            this.panel1.Size = new System.Drawing.Size(259, 117);
             this.panel1.TabIndex = 4;
             // 
             // label3
@@ -202,13 +224,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Backup Location:";
             // 
-            // domainUpDown1
+            // BackupLocationBar
             // 
-            this.domainUpDown1.Location = new System.Drawing.Point(103, 61);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(149, 20);
-            this.domainUpDown1.TabIndex = 5;
-            this.domainUpDown1.Text = "Backup Location";
+            this.BackupLocationBar.Location = new System.Drawing.Point(103, 61);
+            this.BackupLocationBar.Name = "BackupLocationBar";
+            this.BackupLocationBar.Size = new System.Drawing.Size(149, 20);
+            this.BackupLocationBar.TabIndex = 5;
+            this.BackupLocationBar.Text = "Backup Location";
             // 
             // label1
             // 
@@ -230,24 +252,21 @@
             this.SettingsLabel.TabIndex = 7;
             this.SettingsLabel.Text = "You cannot modify settings whilst the server is running";
             // 
-            // DebugConsole
+            // SetBackupTimer
             // 
-            this.DebugConsole.Enabled = false;
-            this.DebugConsole.Location = new System.Drawing.Point(3, 315);
-            this.DebugConsole.Multiline = true;
-            this.DebugConsole.Name = "DebugConsole";
-            this.DebugConsole.ReadOnly = true;
-            this.DebugConsole.Size = new System.Drawing.Size(807, 96);
-            this.DebugConsole.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 299);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Temp Debug Console";
+            this.SetBackupTimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.SetBackupTimer.Enabled = false;
+            this.SetBackupTimer.FlatAppearance.BorderSize = 0;
+            this.SetBackupTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SetBackupTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetBackupTimer.ForeColor = System.Drawing.Color.White;
+            this.SetBackupTimer.Location = new System.Drawing.Point(177, 87);
+            this.SetBackupTimer.Name = "SetBackupTimer";
+            this.SetBackupTimer.Size = new System.Drawing.Size(75, 23);
+            this.SetBackupTimer.TabIndex = 8;
+            this.SetBackupTimer.Text = "Save";
+            this.SetBackupTimer.UseVisualStyleBackColor = false;
+            this.SetBackupTimer.Click += new System.EventHandler(this.SetBackupTimer_Click);
             // 
             // Form1
             // 
@@ -264,7 +283,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "DBServer Controller";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackUpTime)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -285,19 +304,20 @@
         private System.Windows.Forms.Button StartStop;
         private System.Windows.Forms.Label CPUUsage;
         private System.Windows.Forms.Label RamLabel;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar BackUpTime;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.DomainUpDown BackupLocationBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel SettingsPanel;
         private System.Windows.Forms.Label SettingsLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox DebugConsole;
+        private System.Windows.Forms.Button SetBackupTimer;
     }
 }
 

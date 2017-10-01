@@ -38,6 +38,7 @@ namespace DBSystemController
             ModifyProgressBarColor.SetState(ActivityBar, 2);
         }
 
+        string DebugConsoleText;
         bool SystemRunning = false; //this will have protection later I promise!
 
         private void StartStop_Click(object sender, EventArgs e)
@@ -60,6 +61,7 @@ namespace DBSystemController
                 SystemRunning = false;
                 ModifyProgressBarColor.SetState(ActivityBar, 2);
                 SettingsPanel.Visible = true;
+                CloseConnections();
             }
         }
 
@@ -83,10 +85,31 @@ namespace DBSystemController
         //<<<<<<<<<< THIS SHOULD OPEN ALL OF THE CONNECTIONS
         public void OpenConnections()
         {
-            string DebugConsoleText = "Establishing Connections";
+            DebugConsoleText = "Establishing Connections";
+            //use this 
             SetConsoleText(ref DebugConsoleText);
         }
 
+        //<<<<<<<<<< THIS SHOULD CLOSE ALL OF THE CONNECTIONS WHEN THE SERVER IS TURNED OFF
+        public void CloseConnections()
+        {
+            DebugConsoleText = "Closing Connections";
+            SetConsoleText(ref DebugConsoleText);
+        }
+
+        //this is the start of the elemtns need for backup settings
+        private void SetBackupTimer_Click(object sender, EventArgs e)
+        {
+            //will become enabled whenever an element is changed
+            SetBackupTimer.Enabled = false;
+            //Then sets the new backup elements
+            //such as changing the timer
+        }
+
+        private void BackUpTime_Changed(object sender, EventArgs e)
+        {
+            SetBackupTimer.Enabled = true;
+        }
     }
 
     //progress bar, that's right we need all this to change the colour
