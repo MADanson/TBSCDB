@@ -18,6 +18,7 @@ namespace DBSystemController
         PerformanceCounter PercentBytesUsed = new System.Diagnostics.PerformanceCounter();
         PerformanceCounter TotalCPUUsage = new System.Diagnostics.PerformanceCounter();
         Timer Updater = new Timer();
+        Timer BackupCountTimer = new Timer();
 
         public Form1()
         {
@@ -34,13 +35,22 @@ namespace DBSystemController
             Updater.Enabled = true;
             Updater.Start();
 
+            //adding backup timer currently gets set to 10,000 at boot will read from file (ten minutes)
+            BackupCountTimer.Interval = 10000;
+            BackupCountTimer.Tick += new EventHandler(BackupCountTimer_Tick);
+            BackupCountTimer.Enabled = true;
+            BackupCountTimer.Start();
+
             FormBorderStyle = FormBorderStyle.Fixed3D;
             ModifyProgressBarColor.SetState(ActivityBar, 2);
         }
 
+        //Global Values - be careful when using these
         string DebugConsoleText;
         bool SystemRunning = false; //this will have protection later I promise!
         int BackupTimeVal = 100000; //will be loaded from a file
+        bool OnBackup = false;
+        int BackUpIndicatorCount = 0;
 
         private void StartStop_Click(object sender, EventArgs e)
         {
@@ -72,6 +82,15 @@ namespace DBSystemController
             double RamRound = (PercentBytesUsed.NextValue()) / 100;
             RamLabel.Text = "RAM Usage: " + Math.Round(RamRound, 0,MidpointRounding.AwayFromZero) + "%";
             CPUUsage.Text = "CPU Usage: " + Math.Round(TotalCPUUsage.NextValue(), 0, MidpointRounding.AwayFromZero) + "%";
+
+            //this little if else keeps the activity bar yellow for 5 seconds before setting back
+            if((OnBackup == true) && (BackUpIndicatorCount != 0))
+            {
+              BackUpIndicatorCount--;
+            } else {
+              ModifyProgressBarColor.SetState(ActivityBar, 1);
+              OnBackup = false;
+            }
         }
 
         //Method for setting DebugConsole Text from outside classes
@@ -87,7 +106,7 @@ namespace DBSystemController
         public void OpenConnections()
         {
             DebugConsoleText = "Establishing Connections";
-            //use this 
+            //use this
             SetConsoleText(ref DebugConsoleText);
         }
 
@@ -102,8 +121,10 @@ namespace DBSystemController
         private void SetBackupTimer_Click(object sender, EventArgs e)
         {
             //will become enabled whenever an element is changed
-            SetBackupTimer.Enabled = false;
-            BackupTimeVal = BackUpTime.Value;
+            SetBackupTimer.Enabled = false; //disables button
+
+            BackupTimeVal = (BackUpTime.Value * 60000); //converts to minutes
+            BackupCountTimer.Interval = BackupTimeVal;
             //Then sets the new backup elements
             //such as changing the timer
         }
@@ -115,12 +136,20 @@ namespace DBSystemController
             if(BackUpTime.Value == 0)
             {
                 SetVal = BackUpTime.Value + 1; //stops the time from being 0
-                label3.Text = (SetVal + " Minute");
+                label3.Text = (SetVal + " Minute"); //cheeky bit of detail
             } else
             {
                 SetVal = BackUpTime.Value;
                 label3.Text = (SetVal + " Minutes");
             }
+        }
+
+        //event fires every BackUpTimer Tick
+        private void BackupCountTimer_Tick(object sender, EventArgs e)
+        {
+          ModifyProgressBarColor.SetState(ActivityBar, 3);
+          OnBackup = true;
+          //collect data and export to back up
         }
     }
 
@@ -135,5 +164,4 @@ namespace DBSystemController
             SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
         }
     }
-
 }
