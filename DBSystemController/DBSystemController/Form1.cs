@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Net;
+using System.Net.Sockets;
 
 namespace DBSystemController
 {
@@ -117,7 +119,7 @@ namespace DBSystemController
             SetConsoleText(ref DebugConsoleText);
         }
 
-        //this is the start of the elemtns need for backup settings
+        //Will change backup timer interval Tick event maybe calculated
         private void SetBackupTimer_Click(object sender, EventArgs e)
         {
             //will become enabled whenever an element is changed
