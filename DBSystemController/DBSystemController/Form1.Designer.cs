@@ -57,9 +57,9 @@
             this.SettingsPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // buttonStart
-            // 
+            //
             this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.buttonStart.Enabled = false;
             this.buttonStart.FlatAppearance.BorderSize = 0;
@@ -74,9 +74,9 @@
             this.buttonStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonStart.UseMnemonic = false;
             this.buttonStart.UseVisualStyleBackColor = false;
-            // 
+            //
             // ActivityBar
-            // 
+            //
             this.ActivityBar.ForeColor = System.Drawing.Color.Red;
             this.ActivityBar.Location = new System.Drawing.Point(12, 12);
             this.ActivityBar.MarqueeAnimationSpeed = 10;
@@ -85,9 +85,9 @@
             this.ActivityBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ActivityBar.TabIndex = 2;
             this.ActivityBar.Value = 100;
-            // 
+            //
             // StartStop
-            // 
+            //
             this.StartStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
             this.StartStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.StartStop.FlatAppearance.BorderSize = 0;
@@ -102,9 +102,9 @@
             this.StartStop.UseMnemonic = false;
             this.StartStop.UseVisualStyleBackColor = false;
             this.StartStop.Click += new System.EventHandler(this.StartStop_Click);
-            // 
+            //
             // RamLabel
-            // 
+            //
             this.RamLabel.AutoSize = true;
             this.RamLabel.BackColor = System.Drawing.Color.White;
             this.RamLabel.Location = new System.Drawing.Point(239, 30);
@@ -112,9 +112,9 @@
             this.RamLabel.Size = new System.Drawing.Size(66, 13);
             this.RamLabel.TabIndex = 0;
             this.RamLabel.Text = "Ram Usage:";
-            // 
+            //
             // CPUUsage
-            // 
+            //
             this.CPUUsage.AutoSize = true;
             this.CPUUsage.BackColor = System.Drawing.Color.White;
             this.CPUUsage.Location = new System.Drawing.Point(152, 30);
@@ -122,9 +122,9 @@
             this.CPUUsage.Size = new System.Drawing.Size(66, 13);
             this.CPUUsage.TabIndex = 0;
             this.CPUUsage.Text = "CPU Usage:";
-            // 
+            //
             // BackUpTime
-            // 
+            //
             this.BackUpTime.Location = new System.Drawing.Point(3, 23);
             this.BackUpTime.Maximum = 60;
             this.BackUpTime.Name = "BackUpTime";
@@ -133,9 +133,9 @@
             this.BackUpTime.TabIndex = 3;
             this.BackUpTime.TickFrequency = 5;
             this.BackUpTime.Scroll += new System.EventHandler(this.BackUpTime_Changed);
-            // 
+            //
             // tabControl1
-            // 
+            //
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.ItemSize = new System.Drawing.Size(58, 18);
@@ -144,9 +144,9 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(821, 443);
             this.tabControl1.TabIndex = 5;
-            // 
+            //
             // tabPage1
-            // 
+            //
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.DebugConsole);
@@ -156,18 +156,18 @@
             this.tabPage1.Size = new System.Drawing.Size(813, 417);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            // 
+            //
             // label4
-            // 
+            //
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 299);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Temp Debug Console";
-            // 
+            //
             // DebugConsole
-            // 
+            //
             this.DebugConsole.Enabled = false;
             this.DebugConsole.Location = new System.Drawing.Point(3, 315);
             this.DebugConsole.Multiline = true;
@@ -175,9 +175,9 @@
             this.DebugConsole.ReadOnly = true;
             this.DebugConsole.Size = new System.Drawing.Size(807, 96);
             this.DebugConsole.TabIndex = 0;
-            // 
+            //
             // tabPage2
-            // 
+            //
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.tabPage2.Controls.Add(this.SettingsPanel);
             this.tabPage2.Controls.Add(this.SettingsLabel);
@@ -187,18 +187,18 @@
             this.tabPage2.Size = new System.Drawing.Size(813, 417);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Settings";
-            // 
+            //
             // SettingsPanel
-            // 
+            //
             this.SettingsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.SettingsPanel.Controls.Add(this.panel1);
             this.SettingsPanel.Location = new System.Drawing.Point(0, 0);
             this.SettingsPanel.Name = "SettingsPanel";
             this.SettingsPanel.Size = new System.Drawing.Size(813, 417);
             this.SettingsPanel.TabIndex = 6;
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.SetBackupTimer);
             this.panel1.Controls.Add(this.label3);
@@ -211,44 +211,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 117);
             this.panel1.TabIndex = 4;
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(193, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "10 Minutes";
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Backup Location:";
-            // 
+            //
             // BackupLocationBar
-            // 
+            //
             this.BackupLocationBar.Location = new System.Drawing.Point(103, 61);
             this.BackupLocationBar.Name = "BackupLocationBar";
             this.BackupLocationBar.Size = new System.Drawing.Size(149, 20);
             this.BackupLocationBar.TabIndex = 5;
             this.BackupLocationBar.Text = "Backup Location";
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Backup interval:";
-            // 
+            //
             // SettingsLabel
-            // 
+            //
             this.SettingsLabel.AutoSize = true;
             this.SettingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingsLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -257,9 +257,9 @@
             this.SettingsLabel.Size = new System.Drawing.Size(534, 25);
             this.SettingsLabel.TabIndex = 7;
             this.SettingsLabel.Text = "You cannot modify settings whilst the server is running";
-            // 
+            //
             // SetBackupTimer
-            // 
+            //
             this.SetBackupTimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
             this.SetBackupTimer.Enabled = false;
             this.SetBackupTimer.FlatAppearance.BorderSize = 0;
@@ -273,18 +273,18 @@
             this.SetBackupTimer.Text = "Save";
             this.SetBackupTimer.UseVisualStyleBackColor = false;
             this.SetBackupTimer.Click += new System.EventHandler(this.SetBackupTimer_Click);
-            // 
+            //
             // label5
-            // 
+            //
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(162, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Every";
-            // 
+            //
             // Form1
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -334,7 +334,7 @@
         private System.Windows.Forms.TextBox DebugConsole;
         private System.Windows.Forms.Button SetBackupTimer;
         private System.Windows.Forms.Label label5;
+        //new timer after not fucking with this one
         private System.Windows.Forms.Timer BackupTimer;
     }
 }
-
